@@ -52,7 +52,7 @@ $budget_warning = ($budget_limit > 0 && $total_expense > $budget_limit);
         <div class="stat-value value-balance">₹<?php echo number_format($balance, 2); ?></div>
     </div>
     <div class="card">
-        <div class="stat-label">Total Income</div>
+        <div class="stat-label">Total Salary (Income)</div>
         <div class="stat-value value-income">₹<?php echo number_format($total_income, 2); ?></div>
     </div>
     <div class="card">
@@ -60,6 +60,28 @@ $budget_warning = ($budget_limit > 0 && $total_expense > $budget_limit);
         <div class="stat-value value-expense">₹<?php echo number_format($total_expense, 2); ?></div>
     </div>
 </div>
+
+<?php if ($budget_limit > 0): 
+    $percentage = ($total_expense / $budget_limit) * 100;
+    $bar_class = ($percentage > 100) ? 'warning' : (($percentage > 80) ? '' : 'success');
+    $display_percentage = min(100, $percentage);
+?>
+<div class="card animate-fade-in" style="margin-top: 1.5rem;">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h3>Monthly Budget Progress</h3>
+        <span class="text-muted" style="font-size: 0.875rem;">Limit: ₹<?php echo number_format($budget_limit, 2); ?></span>
+    </div>
+    
+    <div class="progress-container">
+        <div class="progress-bar <?php echo $bar_class; ?>" style="width: <?php echo $display_percentage; ?>%;"></div>
+    </div>
+    
+    <div class="budget-stats">
+        <span>Used: ₹<?php echo number_format($total_expense, 2); ?> (<?php echo round($percentage, 1); ?>%)</span>
+        <span>Remaining: ₹<?php echo number_format(max(0, $budget_limit - $total_expense), 2); ?></span>
+    </div>
+</div>
+<?php endif; ?>
 
 <div class="card animate-fade-in" style="margin-top: 1.5rem;">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">

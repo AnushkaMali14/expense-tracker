@@ -177,7 +177,32 @@ nav {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Layout structures */
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    background-color: var(--border-color);
+    border-radius: 9999px;
+    height: 10px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 9999px;
+    transition: width 0.3s ease;
+}
+
+.progress-bar.warning { background-color: var(--expense-color); }
+.progress-bar.success { background-color: var(--success-color); }
+
+.budget-stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
 .container {
     max-width: 1200px;
     margin: 2rem auto;
