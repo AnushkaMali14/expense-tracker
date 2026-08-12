@@ -1,6 +1,6 @@
 -- Expense Tracker Database Setup
-CREATE DATABASE IF NOT EXISTS expense_tracker;
-USE expense_tracker;
+--CREATE DATABASE IF NOT EXISTS expense_tracker;
+USE if0_42640017_expense;
 
 -- Users table
 CREATE TABLE IF NOT EXISTS users (
