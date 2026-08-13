@@ -1,37 +1,117 @@
-# 💰 Expense Tracker (PHP & MySQL)
+# 💰 Expense Tracker — PHP & MySQL
 
-A modern, full-stack Expense Tracker application designed for students and beginners. Built with a focus on clean UI/UX and functional reliability.
+A full-stack web application for managing personal income and expenses. The application allows users to track transactions, manage budgets, analyze spending patterns, and export financial data.
 
-## 🔗 Live Demo
-**Check it out here:** [https://anushka-expense-app.gamer.gd/](https://anushka-expense-app.gamer.gd/)
+## 🔗 Project Links
+
+🚀 **Live Demo:** [https://letstrack.page.gd](https://letstrack.page.gd)
+
+💻 **GitHub Repository:** [https://github.com/AnushkaMali14/expense-tracker](https://github.com/AnushkaMali14/expense-tracker)
+
+---
 
 ## 🚀 Key Features
-- **Dashboard Overview**: Instant access to Total Balance, Income, and Expenses.
-- **Transaction Management**: Add, Edit, and Delete transactions with ease.
-- **Advanced Filtering**: Search by description, filter by category, date range, or transaction type.
-- **Visual Analytics**: Interactive Pie and Bar charts powered by Chart.js.
-- **Budget Control**: Set a monthly budget and receive automatic warnings if you overspend.
-- **Dark Mode**: Stylish dark theme toggle for late-night budgeting.
-- **Export Data**: Download your complete transaction history in CSV format.
+
+- **Dashboard Overview:** View total balance, income, expenses, and budget information.
+- **Transaction Management:** Add, edit, and delete income and expense transactions.
+- **Advanced Filtering:** Filter transactions by description, category, date range, and transaction type.
+- **Visual Analytics:** Interactive Pie and Bar charts using Chart.js.
+- **Budget Control:** Set a monthly budget and monitor spending.
+- **Dark Mode:** Toggle between light and dark themes.
+- **CSV Export:** Export transaction history as a CSV file.
+- **User Authentication:** User registration and login functionality.
+- **Responsive UI:** Interface designed to work across different screen sizes.
+
+---
 
 ## 🛠️ Technical Stack
-- **Frontend**: HTML5, CSS3 (Glassmorphism), JavaScript (ES6+).
-- **Backend**: PHP (PDO for Database consistency and security).
-- **Database**: MySQL.
-- **Charts**: Chart.js.
 
-## ⚙️ How to Install
-1. **Copy Files**: Place the `WDL` folder content into your `htdocs` (XAMPP) or `www` (WAMP) directory.
-2. **Database Setup**:
-   - Open **phpMyAdmin**.
-   - Create a database called `expense_tracker`.
-   - Import the `setup.sql` file.
-3. **Configure**: Update `config.php` if your MySQL username or password differs from the defaults (root/empty).
-4. **Enjoy**: Visit `http://localhost/WDL` in your browser.
+### Frontend
 
-## 📂 Folder Structure
-- `/css`: Stylesheets.
-- `/js`: Frontend logic.
-- `config.php`: Database connection.
-- `setup.sql`: Initial database structure.
-- `index.php`: Login gateway.
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- Chart.js
+
+### Backend
+
+- PHP
+- PDO
+
+### Database
+
+- MySQL
+
+### Tools & Deployment
+
+- Git
+- GitHub
+- phpMyAdmin
+- InfinityFree
+
+---
+
+## 🔄 CRUD Operations
+
+The application implements CRUD operations for transaction management:
+
+| Operation | Function |
+|---|---|
+| **Create** | Add income and expense transactions |
+| **Read** | View and filter transactions |
+| **Update** | Edit existing transactions |
+| **Delete** | Delete transactions |
+
+---
+
+## 📊 Dashboard & Analytics
+
+The dashboard provides an overview of the user's financial activity, including:
+
+- Total income
+- Total expenses
+- Current balance
+- Budget information
+- Transaction history
+- Spending analysis
+
+Chart.js is used to display financial data through interactive Pie and Bar charts.
+
+---
+
+## 🗄️ Database Structure
+
+The application uses a MySQL relational database with two main tables.
+
+### Users
+
+Stores user account information and budget limits.
+
+Main fields include:
+
+- `id`
+- `username`
+- `email`
+- `password`
+- `budget_limit`
+- `created_at`
+
+### Transactions
+
+Stores income and expense records associated with users.
+
+Main fields include:
+
+- `id`
+- `user_id`
+- `amount`
+- `type`
+- `category`
+- `date`
+- `description`
+- `created_at`
+
+### Relationship
+
+```text
+Users (1) ────────────< Transactions (Many)
